@@ -1,4 +1,4 @@
-ConVNest: Robust Brain Tumor Classification on MRI
+ConvNeXT: Robust Brain Tumor Classification on MRI
 
 Overview
 This project presents a state-of-the-art deep learning framework that leverages the ConvNeXt Base architecture for highly accurate, efficient, and explainable classification of brain tumors from MRI scans. The model classifies images into four categories: Glioma, Meningioma, Pituitary tumor, and No Tumor, achieving over 99.6% accuracy across diverse datasets. It is designed to balance diagnostic precision, computational efficiency, and interpretability for potential clinical deployment.
