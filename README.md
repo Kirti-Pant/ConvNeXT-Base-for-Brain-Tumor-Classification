@@ -1,67 +1,45 @@
-ConvNeXT: Robust Brain Tumor Classification on MRI
+# ConVNest: Brain Tumor Classification on MRI Scans
 
-Overview
-This project presents a state-of-the-art deep learning framework that leverages the ConvNeXt Base architecture for highly accurate, efficient, and explainable classification of brain tumors from MRI scans. The model classifies images into four categories: Glioma, Meningioma, Pituitary tumor, and No Tumor, achieving over 99.6% accuracy across diverse datasets. It is designed to balance diagnostic precision, computational efficiency, and interpretability for potential clinical deployment.
+<img width="329" height="359" alt="m" src="https://github.com/user-attachments/assets/d50b5282-c151-4266-9451-f19d7aa0fd54" />
 
-Features
-Uses modern ConvNeXt Base architecture combining convolutional networks and transformer-inspired design for superior feature extraction.
+## Project Summary
+This project develops a robust and efficient deep learning framework for multi-class brain tumor classification using MRI images. Leveraging a modernized ConvNeXt Base architecture inspired by transformer designs, the model classifies brain tumors into four categories: Glioma, Meningioma, Pituitary tumor, and No Tumor. It achieves exceptional accuracy (>99.6%) and reliable generalization across multiple independent datasets while providing explainable predictions through visualization techniques like Grad-CAM and Gradient SHAP.
 
-Cross-dataset validation ensures robust generalization beyond single-domain training.
+## Key Achievements
 
-Extensive benchmarking against ResNet, EfficientNet, VGG, and MobileNet backbones under unified conditions.
+- Adapted and optimized the ConvNeXt Base model for medical imaging focused on brain MRI.
+- Comprehensive cross-dataset validation demonstrating strong generalization beyond single-domain data.
+- Benchmarking against leading CNN architectures (ResNet152, EfficientNetV2-B0, VGG19, MobileNetV3 Large) under uniform conditions.
+- Applied rigorous statistical tests (Friedman, Holm, Wilcoxon, Kendall's W) to validate model performance.
+- Integrated efficient on-the-fly data augmentation to improve robustness without storage overhead.
+- Delivered computational efficiency profiling suitable for clinical and edge deployment considerations.
+- Provided multi-perspective interpretability validating model focus on clinically relevant tumor regions using explainability methods.
 
-Includes post hoc explainability with Grad-CAM and Gradient SHAP visualizations, highlighting clinically relevant tumor regions.
+## Methodology
+- Employed ConvNeXt Base convolutional architecture with large kernel depthwise convolutions and layer normalization.
+- Input MRI slices resized to 224x224 resolution and passed through hierarchical ConvNeXt blocks across four stages.
+- Final classification head utilizes Global Average Pooling and softmax layers for four-class prediction.
+- Trained using Adam optimizer with categorical cross-entropy loss, over 20 epochs with batch size 32.
+- Implemented stochastic depth regularization and transfer learning from pretrained weights.
 
-Rigorous statistical tests validate the model’s performance consistency and superiority.
+## Dataset and Preprocessing
+- Utilized publicly available heterogeneous MRI brain tumor datasets spanning multiple institutions.
+- Classes include Glioma, Meningioma, Pituitary, and No Tumor cases.
+- Performed dynamic resizing, normalization, and data augmentation (rotations, flips, crops) on-the-fly during training.
 
-Resource-efficient training with on-the-fly data augmentation and optimized inference speed.
+## Usage Instructions
+- Preprocess MRI scans to normalized 224x224 size.
+- Load the pretrained ConvNeXt Base model checkpoint.
+- Perform inference to obtain tumor class probabilities and predicted labels.
+- Visualize decision regions using Grad-CAM or Gradient SHAP for explainability.
+- Evaluate performance using metrics like accuracy, precision, recall, F1-score, AUC, and kappa statistics.
 
-Comprehensive performance metrics reported: accuracy, sensitivity, specificity, precision, recall, F1-score, AUC, and Kappa.
+## References and Resources
+- Dataset and code repositories are publicly available for reproducibility.
+- Detailed architecture design, training scripts, and evaluation notebooks included.
 
-Methodology
-ConvNeXt Base architecture customized for brain MRI input, with hierarchical large-kernel depthwise convolutions and Layer Normalization for stable, scalable learning.
+---
 
-Input images preprocessed and resized to 224x224 pixels, then fed through four stages of ConvNeXt blocks with downsampling and feature expansion.
+This README reflects the comprehensive work on the ConvNeXt-based brain tumor classification framework with a focus on accuracy, efficiency, explainability, and clinical relevance.
 
-Final classification head with Global Average Pooling and softmax output over four tumor classes.
 
-Trained using Adam optimizer, cross-entropy loss, and regularization strategies such as stochastic depth.
-
-Dataset
-Utilizes multiple publicly available MRI brain tumor datasets for training, validation, and external testing.
-
-Classes include Glioma, Meningioma, Pituitary tumors, and No Tumor controls.
-
-Data augmentation applied dynamically to improve model robustness without increasing storage overhead.
-
-Usage
-Preprocess MRI images to the required input size and normalization.
-
-Load the trained ConvNeXt model checkpoint.
-
-Run inference to obtain tumor classification probabilities and predicted labels.
-
-Use Grad-CAM or Gradient SHAP tools for explainability visualizations of tumor regions.
-
-Evaluate model using comprehensive metrics provided.
-
-Results and Impact
-Consistently outperforms popular CNN backbones with near-perfect accuracy and AUC metrics.
-
-Demonstrated rapid convergence and balanced resource use suitable for clinical or edge deployment.
-
-Explainability maps enhance transparency and trustworthiness for medical professionals.
-
-Validated by multiple statistical significance tests to ensure reliability.
-
-Future Directions
-Extend multi-institutional validation and finer tumor subtype classification.
-
-Explore model calibration and fairness evaluation for clinical integration.
-
-Develop deployment pipelines for real-world healthcare applications.
-
-Acknowledgments
-Datasets and code repositories are publicly available for reproducibility.
-
-No external funding; authors declare no conflicts of interest.
