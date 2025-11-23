@@ -1,4 +1,4 @@
-# ConVNest: Brain Tumor Classification on MRI Scans
+# ConVNeXT: Brain Tumor Classification on MRI Scans
 
 <img width="329" height="359" alt="m" src="https://github.com/user-attachments/assets/d50b5282-c151-4266-9451-f19d7aa0fd54" />
 
